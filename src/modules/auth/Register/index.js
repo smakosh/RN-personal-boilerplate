@@ -4,7 +4,7 @@ import { withFormik, Field } from 'formik'
 import * as Yup from 'yup'
 import { View } from 'react-native'
 import { InputField, CustomButton, Error } from '../../common'
-import { Wrapper, WhiteText } from '../styles'
+import { Wrapper } from '../styles'
 
 const Register = ({
 	values,
@@ -20,6 +20,8 @@ const Register = ({
 					component={InputField}
 					onChangeText={handleChange('email')}
 					value={values.email}
+					placeholder="email"
+					placeholderTextColor="#5282f0"
 				/>
 				{touched.email && errors.email && <Error>{errors.email}</Error>}
 			</View>
@@ -29,13 +31,13 @@ const Register = ({
 					autoCorrect={false}
 					onChangeText={handleChange('password')}
 					value={values.password}
+					placeholder="password"
+					placeholderTextColor="#5282f0"
 					secureTextEntry
 				/>
 				{touched.password && errors.password && <Error>{errors.password}</Error>}
 			</View>
-			<CustomButton onPress={handleSubmit}>
-				<WhiteText>Register</WhiteText>
-			</CustomButton>
+			<CustomButton onPress={handleSubmit} text="signup" />
 		</Wrapper>
 	</View>
 )

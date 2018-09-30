@@ -18,12 +18,13 @@ Don't hesitate to get in touch in case you ran in issues not mentioned above
 
 - Stateless functional components using Recompose
 - Screens setup with react-navigation
-- Redux store setup and configured `// Not implemented yet`
+- Redux store setup and configured
 - Nice file structure
 - Eslint
 - Client side error handling with formik and validation with yup
-- Server side errors show up easily, you need to pass the right errors object from the backend `// Not implemented yet`
+- Server side errors show up easily, you need to pass the right errors object from the backend
 - Common used elements styled and ready to use `// More to be added`
+- i18n with react-intl
 
 and more....
 
@@ -42,12 +43,14 @@ and more....
 "redux": "^4.0.0",
 "redux-thunk": "^2.3.0",
 "styled-components": "^4.0.0-beta.8-unpure",
-"yup": "^0.26.6"
+"yup": "^0.26.6",
+"react-intl": "^2.7.0",
+"react-native-swiper": "^1.5.13",
 ```
 
 ### Todo
 
-- [ ] Setup actions/reducer boilerplate for auth
+- [x] Setup actions/reducer boilerplate for auth
 - [ ] Write an article connecting a rest api with this boilerplate
 - [ ] Apply redux-thunk
 - [ ] Prepare more most common used elements (checkbox, radio button...)

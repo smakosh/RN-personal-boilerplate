@@ -1,18 +1,31 @@
 import React from 'react'
-import styled from 'styled-components'
-import { CustomHeader, CustomFooter } from '../../common'
+import { connect } from 'react-redux'
+import { Text } from 'react-native'
+import ar from 'react-intl/locale-data/ar'
+import en from 'react-intl/locale-data/en'
+import { addLocaleData, IntlProvider } from 'react-intl'
+import localEng from '../../../messages/eng.json'
+import localAr from '../../../messages/ar.json'
+import CustomHeader from '../../theme/CustomHeader'
+import CustomFooter from '../../theme/CustomFooter'
+import { IphoneX, Wrapper } from './styles'
 
-const Layout = ({ navigation, title, screen, children, back }) => (
-	<IphoneX>
-		<CustomHeader title={title} back={back} goBack={navigation.goBack} />
-		{children}
-		<CustomFooter title={screen} navigate={navigation.navigate} />
-	</IphoneX>
+addLocaleData([...ar, ...en])
+
+const Layout = ({ navigation, title, screen, children, back, theme }) => (
+	<IntlProvider locale={theme.language} messages={theme.language === 'en' ? localEng : localAr} textComponent={Text}>
+		<IphoneX>
+			{(screen !== 'Home' && screen !== 'Tutorial' && screen !== 'Auth') && <CustomHeader title={title} back={back} goBack={navigation.goBack} />}
+			<Wrapper>
+				{children}
+			</Wrapper>
+			{(screen !== 'Home' && screen !== 'Tutorial' && screen !== 'Auth') && <CustomFooter title={screen} navigate={navigation.navigate} />}
+		</IphoneX>
+	</IntlProvider>
 )
 
-const IphoneX = styled.SafeAreaView`
-	flex: 1;
-	background-color: #fff;
-`
+const mapStateToProps = ({ theme }) => ({
+	theme
+})
 
-export { Layout }
+export default connect(mapStateToProps)(Layout)

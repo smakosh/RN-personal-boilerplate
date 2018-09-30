@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text } from 'react-native'
-import { Layout } from '../modules/common'
+import Start from '../modules/theme/Start'
 
 class WelcomeScreen extends Component {
 	static navigationOptions = {
@@ -10,11 +9,7 @@ class WelcomeScreen extends Component {
 	render() {
 		const { navigation } = this.props
 		return (
-			<Layout title="Boilerplate" screen="Home" navigation={navigation}>
-				<View style={{ flex: 1, justifyContent: 'center' }}>
-					<Text style={{ textAlign: 'center' }}>Welcome!</Text>
-				</View>
-			</Layout>
+			<Start navigation={navigation} />
 		)
 	}
 }

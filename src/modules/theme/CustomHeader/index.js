@@ -17,4 +17,4 @@ const CustomHeader = ({ title, back, goBack }) => (
 	</Header>
 )
 
-export { CustomHeader }
+export default CustomHeader

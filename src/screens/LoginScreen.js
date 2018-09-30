@@ -11,7 +11,7 @@ class LoginScreen extends Component {
 		const { navigation } = this.props
 		return (
 			<Layout title="Login" screen="Login" back navigation={navigation}>
-				<Login />
+				<Login navigate={navigation.navigate} />
 			</Layout>
 		)
 	}

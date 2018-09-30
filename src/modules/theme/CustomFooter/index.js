@@ -15,4 +15,4 @@ const CustomFooter = ({ navigate, title }) => (
 	</Footer>
 )
 
-export { CustomFooter }
+export default CustomFooter
