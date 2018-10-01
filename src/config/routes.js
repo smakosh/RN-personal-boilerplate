@@ -10,9 +10,9 @@ const AppStackNavigator = createStackNavigator({
 	Home: WelcomeScreen,
 	Login: LoginScreen,
 	Register: RegisterScreen,
-	Profile: ProfileScreen,
 	Tutorial: TutorialScreen,
-	Auth: AuthScreen
+	Auth: AuthScreen,
+	Profile: ProfileScreen
 })
 
 export default AppStackNavigator
