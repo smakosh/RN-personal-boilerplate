@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import Swappable from '../modules/swipe/Swappable'
-import { Layout, CustomButton } from '../modules/common'
+import Swipe from '../modules/Swipe'
 
 class TutorialScreen extends Component {
 	static navigationOptions = {
@@ -8,14 +7,10 @@ class TutorialScreen extends Component {
 	}
 
 	render() {
-    	const { navigation } = this.props
-    	return (
-    		<Layout title="Tutorial" screen="Tutorial" navigation={navigation}>
-				<CustomButton onPress={() => navigation.navigate('Auth')} text="skip" link />
-				<Swappable navigate={navigation.navigate} />
-				<CustomButton onPress={() => navigation.navigate('Auth')} text="next" />
-    		</Layout>
-    	)
+		const { navigation } = this.props
+		return (
+			<Swipe navigation={navigation} />
+		)
 	}
 }
 
